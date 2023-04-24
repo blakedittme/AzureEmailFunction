@@ -1,0 +1,22 @@
+{
+  "generatedBy": "Microsoft.NET.Sdk.Functions.Generator-4.1.1",
+  "configurationSource": "attributes",
+  "bindings": [
+    {
+      "type": "timerTrigger",
+      "schedule": "*/100000 * * * * *",
+      "useMonitor": true,
+      "runOnStartup": false,
+      "name": "myTimer"
+    },
+    {
+      "type": "sendGrid",
+      "apiKey": "SendGridApiKey",
+      "name": "$return",
+      "direction": "out"
+    }
+  ],
+  "disabled": false,
+  "scriptFile": "../bin/AzureEmailing.dll",
+  "entryPoint": "AzureEmailing.SendEmailTimer.Run"
+}
